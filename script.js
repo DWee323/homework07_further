@@ -178,7 +178,7 @@ const root = (num, x_root) => {
         let root_val = 0;
         let check = power(root_val, x_root);
 
-        for(let i = 0 ; i+1 < x_root ; i++){
+        for(let i = 0 ; i+1 < x_root && check <= num; i++){
             root_val = root_val + 1;
         }
 
@@ -191,29 +191,32 @@ const root = (num, x_root) => {
 }
 
 console.log( "sqrt",
-    squareRoot(100),
-squareRoot(101),
-squareRoot(99),
-squareRoot(5),
-squareRoot(1000),
+squareRoot(100), //10
+squareRoot(100.8), //10.04
+squareRoot(101), //10.05
+squareRoot(99), //9.95
+squareRoot(5), //2.24
+squareRoot(1000), //31.62
 squareRoot(-100), //error
-squareRoot(9),  // returns 3
-squareRoot(144),  // returns 12
+squareRoot(9),  // 3
+squareRoot(144),  // 12
 );
 
-console.log("cubeRoot", cubeRoot(8),
-cubeRoot(26),
-cubeRoot(27),
-cubeRoot(28),
-cubeRoot(30),
+console.log("cubeRoot", 
+cubeRoot(8), //2
+cubeRoot(26), //2.96 > console.log=2.97 drrrr why?!?
+cubeRoot(27), //3
+cubeRoot(28), //3.04
+cubeRoot(30), //3.11
 cubeRoot(-1000), //NOT error ideally, but I will deal with this later: right now this will give an error
 cubeRoot("bleh"), //error
 );
 
-console.log(root(9,2),
-root(9,3),
-root(15625, 6), //returns 5
-root(15625, "lalaLand"),
+console.log("xRoot",
+root(9,2),//3
+root(9,3),//2.08
+root(15625, 6), //5
+root(15625, "lalaLand"),//error
 );
 
 
